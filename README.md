@@ -82,6 +82,7 @@ npm i --save-dev \
 npm i \
     @popperjs/core@2 \
     bootstrap@5 \
+    document-promises@4 \
     instant.page@5
 npm audit 
 ```
