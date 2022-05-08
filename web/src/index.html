@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body data-instant-intensity="viewport-all">
+    <%= require('html-loader!./template/header-index.html').default %>
+        <main>
+        <div class="container-fluid">
+            <div class="px-4 my-5 text-center">
+                <h2>Sub-heading</h2>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Simple diagrams are easy, complex diagrams are
+                        possible. Easy to update, version control, and collaborate on. All using a text-based language for humans.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/editor/">Try it out</a>
+                        <a class="btn btn-secondary btn-lg px-4 me-sm-3" href="/examples/">Examples</a>
+                        <a class="btn btn-outline-secondary btn-lg px-4" href="/tutorial/">Tutorial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%= require('html-loader!./template/footer.html').default %>
+</body>
+
+</html>
