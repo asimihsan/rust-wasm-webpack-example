@@ -1,15 +1,12 @@
 import 'instant.page';
 
-import 'bootstrap/js/dist/button';
-import 'bootstrap/js/dist/collapse';
-import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './footer.css';
 import { contentLoaded, loaded } from 'document-promises';
 
 import importPromiseRust from './rust';
-import { CounterWrapper } from '../pkg_rust';
+import { CounterWrapper } from './pkg_rust';
 
 (() => {
     let rust;

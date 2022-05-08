@@ -86,7 +86,7 @@ module.exports = {
                 path.resolve(__dirname, '..', 'rust'),
                 path.resolve(__dirname, '..', 'rust-wasm-bindgen'),
             ],
-            outDir: path.resolve(__dirname, 'pkg_rust'),
+            outDir: path.resolve(__dirname, 'src', 'pkg_rust'),
             outName: "rust",
             forceMode: "production",
         }),
@@ -97,7 +97,11 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 path.resolve(__dirname, 'src', 'favicon.ico'),
-                path.resolve(__dirname, 'src', '*.png'),
+                path.resolve(__dirname, 'src', 'android-chrome-192x192.png'),
+                path.resolve(__dirname, 'src', 'android-chrome-512x512.png'),
+                path.resolve(__dirname, 'src', 'apple-touch-icon.png'),
+                path.resolve(__dirname, 'src', 'favicon-16x16.png'),
+                path.resolve(__dirname, 'src', 'favicon-32x32.png'),
             ],
         }),
         new HtmlWebpackPlugin({

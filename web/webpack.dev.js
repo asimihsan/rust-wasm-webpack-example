@@ -9,8 +9,13 @@ module.exports = merge(common, {
         hashAlgorithm: 'sha256',
     },
     devServer: {
-        contentBase: './dist/',
-        writeToDisk: true,
+        static: {
+            publicPath: './dist/',
+            watch: true,
+        },
+        devMiddleware: {
+            writeToDisk: true,
+        },
         port: 8086,
     },
 });
