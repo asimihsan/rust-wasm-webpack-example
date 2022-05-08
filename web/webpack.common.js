@@ -105,7 +105,7 @@ module.exports = {
             ],
         }),
         new HtmlWebpackPlugin({
-            title: 'SheepText',
+            title: 'Rust WASM Webpack Example',
             template: path.resolve(__dirname, 'src', 'index.html'),
             filename: 'index.html',
             chunks: ['index'],
