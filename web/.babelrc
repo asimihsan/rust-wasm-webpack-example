@@ -1,7 +1,21 @@
 {
     "presets": [
-        "@babel/preset-env",
-        "@babel/preset-typescript"
+        "@babel/preset-typescript",
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": [
+                        "> 0.5%",
+                        "last 2 versions",
+                        "Firefox ESR",
+                        "not dead",
+                        "not ie 11",
+                        "not op_mini all"
+                    ]
+                }
+            }
+        ]
     ],
     "plugins": [
         "@babel/plugin-proposal-class-properties"
