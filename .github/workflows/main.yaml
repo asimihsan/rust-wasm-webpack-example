@@ -54,8 +54,6 @@ jobs:
         with:
           repository: puppeteer/puppeteer
           path: puppeteer
-      - run: npm install
-        working-directory: ./puppeteer
       - run: npm run start &
         working-directory: ./web
       - name: Wait for server to start
@@ -64,5 +62,5 @@ jobs:
             printf '.'
             sleep 5
           done
-      - run: node ../web/test/evaluate.js
-        working-directory: ./puppeteer
+      - run: node ../web/test/evaluate.ts
+        working-directory: ./web

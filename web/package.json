@@ -16,7 +16,8 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "document-promises": "^4.0.0",
-    "postcss-preset-env": "^8.0.1"
+    "postcss-preset-env": "^8.0.1",
+    "puppeteer": "^19.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
