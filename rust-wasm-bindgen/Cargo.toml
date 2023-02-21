@@ -2,6 +2,7 @@
 name = "rust-wasm-bindgen"
 version = "0.1.0"
 edition = "2021"
+license = "AGPL-3.0-only"
 
 [lib]
 crate-type = ["cdylib"]
@@ -9,6 +10,6 @@ crate-type = ["cdylib"]
 [dependencies]
 rust = { path = "../rust" }
 console_error_panic_hook = "0.1.7"
-serde = { version = "1.0.137", features = ["derive"] }
-wasm-bindgen = { version = "0.2.80", features = ["serde-serialize"] }
-serde_derive = "1.0.137"
+serde = { version = "1.0.152", features = ["derive"] }
+wasm-bindgen = { version = "0.2.84", features = ["serde-serialize"] }
+serde_derive = "1.0.152"
