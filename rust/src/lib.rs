@@ -32,7 +32,10 @@ impl Counter {
     }
 
     pub fn increment(&mut self, delta: i64) -> Result<(), CounterError> {
-        self.value = self.value.checked_add(delta).ok_or(CounterError::Overflow)?;
+        self.value = self
+            .value
+            .checked_add(delta)
+            .ok_or(CounterError::Overflow)?;
         Ok(())
     }
 
