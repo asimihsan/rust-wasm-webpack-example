@@ -55,5 +55,5 @@ pub fn get_increment_result(input: String) -> JsValue {
     let result = GetIncrementResultOutput {
         result: String::from("1"),
     };
-    JsValue::from_serde(&result).unwrap()
+    serde_wasm_bindgen::to_value(&result).unwrap()
 }

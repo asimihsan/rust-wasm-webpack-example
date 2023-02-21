@@ -8,8 +8,9 @@ license = "AGPL-3.0-only"
 crate-type = ["cdylib"]
 
 [dependencies]
-rust = { path = "../rust" }
 console_error_panic_hook = "0.1.7"
+rust = { path = "../rust" }
 serde = { version = "1.0.152", features = ["derive"] }
-wasm-bindgen = { version = "0.2.84", features = ["serde-serialize"] }
+serde-wasm-bindgen = "0.4.5"
 serde_derive = "1.0.152"
+wasm-bindgen = "0.2.84"
