@@ -23,6 +23,7 @@
             "code": 120
         }],
         "import/no-relative-packages": "off",
+        "import/no-unresolved": "off",
 	    "spaced-comment": "off"
     },
     "settings": {
