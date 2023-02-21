@@ -43,13 +43,3 @@ impl CounterWrapper {
         self.internal.get_value()
     }
 }
-
-#[derive(Deserialize)]
-pub struct GetIncrementResultInput {
-    pub initial_value: String,
-}
-
-#[derive(Serialize)]
-pub struct GetIncrementResultOutput {
-    pub result: String,
-}
