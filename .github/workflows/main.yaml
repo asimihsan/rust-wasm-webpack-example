@@ -1,0 +1,42 @@
+name: "Test Suite"
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-rust:
+    name: cargo test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: cargo test
+        working-directory: ./rust
+
+  build-rust-wasm-bindgen:
+    name: cargo test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: cargo build --release --target wasm32-unknown-unknown
+        working-directory: ./rust-wasm-bindgen
+ 
+  # Check formatting with rustfmt
+  formatting:
+    name: cargo fmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Ensure rustfmt is installed and setup problem matcher
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          components: rustfmt
+      - name: Rustfmt Check rust
+        uses: actions-rust-lang/rustfmt@v1
+        with:
+          manifest-path: ./rust/Cargo.toml
+      - name: Rustfmt Check rust-wasm-bindgen
+        uses: actions-rust-lang/rustfmt@v1
+        with:
+          manifest-path: ./rust-wasm-bindgen/Cargo.toml
