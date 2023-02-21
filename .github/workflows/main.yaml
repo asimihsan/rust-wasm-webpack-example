@@ -26,7 +26,6 @@ jobs:
       - run: cargo build --release --target wasm32-unknown-unknown
         working-directory: ./rust-wasm-bindgen
 
-  # Check formatting with rustfmt
   rust-formatting:
     name: rust-formatting
     runs-on: ubuntu-latest
@@ -44,3 +43,27 @@ jobs:
         uses: actions-rust-lang/rustfmt@v1
         with:
           manifest-path: ./rust-wasm-bindgen/Cargo.toml
+
+  build-test-web:
+    name: build-test-web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: wasm32-unknown-unknown
+      - run: cargo build --release --target wasm32-unknown-unknown
+        working-directory: ./rust-wasm-bindgen
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - run: npm install
+        working-directory: ./web
+      - run: npm run build
+        working-directory: ./web
+      - uses: actions/checkout@v2
+        with:
+          repository: puppeteer/puppeteer
+          path: puppeteer
+      - run: npm install
+        working-directory: ./puppeteer
