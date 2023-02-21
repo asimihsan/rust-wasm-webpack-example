@@ -10,11 +10,13 @@
   <a href="#license">License</a>
 </p>
 
-`rust-wasm-webpack-example` is a template for building a web application using Rust, WebAssembly, and Webpack. It
-takes the plain Rust code in the `rust` crate, compiles it to WASM in `wasm-bindgen`, and bundles it with the
-JavaScript code and Webpack build scripts in the `web` directory.
+`rust-wasm-webpack-example` is a template for building a web application using
+Rust, WebAssembly, and Webpack. It takes the plain Rust code in the `rust`
+crate, compiles it to WASM in `wasm-bindgen`, and bundles it with the JavaScript
+code and Webpack build scripts in the `web` directory.
 
-![GitHub Workflow Status](https://github.com/asimihsan/rust-wasm-webpack-example/actions/workflows/main.yaml/badge.svg)
+![GitHub Workflow
+Status](https://github.com/asimihsan/rust-wasm-webpack-example/actions/workflows/main.yaml/badge.svg)
 
 ## Usage
 
@@ -32,17 +34,21 @@ make serve
 
 After playing around with this example code, you can start your own project.
 
-- The `rust` directory contains a crate that is pure Rust. You would create one or more such crates yourself.
-- The `rust-wasm-bindgen` directory contains a crate wraps the pure Rust code and compiles it to WASM using
-  `wasm-bindgen`. You would create at least once such crate for your project. I would create one for each
-  `rust` crate. I prefer to wrap the pure Rust code in a separate crate because it makes it clearer what
-  code is pure Rust and what code is glue code needed for compilation to WASM.
-- The `web` directory contains the JavaScript code and Webpack build scripts. You would create one such
-  directory for your project.
-    - `web/webpack.common.js` is the most important and complicated file. The `WasmPackPlugin` section is
-      where the `rust-wasm-bindgen` crate is compiled to WASM.
-    - Pay attention to the `src/pkg_*` subdirectories. These are the directories that contain the compiled
-      WASM code as a resule of the Webpack config.
+- The `rust` directory contains a crate that is pure Rust. You would create one
+  or more such crates yourself.
+- The `rust-wasm-bindgen` directory contains a crate wraps the pure Rust code
+  and compiles it to WASM using `wasm-bindgen`. You would create at least once
+  such crate for your project. I would create one for each `rust` crate. I
+  prefer to wrap the pure Rust code in a separate crate because it makes it
+  clearer what code is pure Rust and what code is glue code needed for
+  compilation to WASM.
+- The `web` directory contains the JavaScript code and Webpack build scripts.
+  You would create one such directory for your project.
+  - [`web/webpack.common.js`](web/webpack.common.js) is the most important and
+    complicated file. The `WasmPackPlugin` section is where the
+    `rust-wasm-bindgen` crate is compiled to WASM.
+  - Pay attention to the `src/pkg_*` subdirectories. These are the directories
+    that contain the compiled WASM code as a resule of the Webpack config.
 
 ## Developer notes
 
@@ -109,9 +115,10 @@ npm i \
     bootstrap@5 \
     document-promises@4 \
     instant.page@5
-npm audit 
+npm audit
 ```
 
 ## License
 
-This project is licensed under the terms of the Affero General Public License v3.0. See the [LICENSE](LICENSE) file.
+This project is licensed under the terms of the Affero General Public License
+v3.0. See the [LICENSE](LICENSE) file.
