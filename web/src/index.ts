@@ -33,5 +33,12 @@ import { CounterWrapper } from './pkg_rust';
         console.log(counter.get_value());
         counter.increment(BigInt(1));
         console.log(counter.get_value());
+
+        // increment by i64::MAX, which is "9223372036854775807". this will cause an error.
+        try {
+            counter.increment(BigInt('9223372036854775807'));
+        } catch (e) {
+            console.log('caught expected error', e);
+        }
     });
 })();
