@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-rust:
-    name: cargo test
+    name: test-rust
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,17 +16,19 @@ jobs:
         working-directory: ./rust
 
   build-rust-wasm-bindgen:
-    name: cargo test
+    name: build-rust-wasm-bindgen
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: wasm32-unknown-unknown
       - run: cargo build --release --target wasm32-unknown-unknown
         working-directory: ./rust-wasm-bindgen
- 
+
   # Check formatting with rustfmt
-  formatting:
-    name: cargo fmt
+  rust-formatting:
+    name: rust-formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

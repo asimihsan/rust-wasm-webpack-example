@@ -51,7 +51,7 @@ mod tests {
 
     #[test]
     fn test_initially_zero() {
-        let mut counter = Counter::new(0);
+        let counter = Counter::new(0);
         assert_eq!(counter.get_value(), 0);
     }
 
