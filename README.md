@@ -1,27 +1,37 @@
-# rust-wasm-webpack-example
+<h1 align="center">
+  rust-wasm-webpack-example
+</h1>
 
+<h4 align="center">Web application template for Rust, WebAssembly, and Webpack.</h4>
 
+![GitHub Workflow Status](https://github.com/asimihsan/rust-wasm-webpack-example/actions/workflows/main.yaml/badge.svg)
+
+<p align="center">
+  <a href="#usage">Usage</a> •
+  <a href="#developer-notes">Developer notes</a> •
+  <a href="#license">License</a>
+</p>
+
+`rust-wasm-webpack-example` is a template for building a web application using Rust, WebAssembly, and Webpack. It
+takes the plain Rust code in the `rust` crate, compiles it to WASM in `wasm-bindgen`, and bundles it with the
+JavaScript code and Webpack build scripts in the `web` directory.
 
 ## Usage
 
-Install prerequisites
-
-```
-npm install -g critical@4
-brew install moreutils
-```
-
 Build production assets
 
-```
-./build.sh
+```shell
+make build
 ```
 
 Development server
 
-```
+```shell
+make serve
 ```
 
+
+## Developer notes
 
 ### Setting up `rust` from scratch
 
@@ -86,3 +96,7 @@ npm i \
     instant.page@5
 npm audit 
 ```
+
+## License
+
+This project is licensed under the terms of the Affero General Public License v3.0. See the [LICENSE](LICENSE) file.
