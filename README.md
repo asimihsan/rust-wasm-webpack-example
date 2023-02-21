@@ -14,9 +14,7 @@
 takes the plain Rust code in the `rust` crate, compiles it to WASM in `wasm-bindgen`, and bundles it with the
 JavaScript code and Webpack build scripts in the `web` directory.
 
-<p align="center">
 ![GitHub Workflow Status](https://github.com/asimihsan/rust-wasm-webpack-example/actions/workflows/main.yaml/badge.svg)
-</p>
 
 ## Usage
 
