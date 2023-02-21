@@ -15,17 +15,6 @@ jobs:
       - run: cargo test
         working-directory: ./rust
 
-  build-rust-wasm-bindgen:
-    name: build-rust-wasm-bindgen
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          target: wasm32-unknown-unknown
-      - run: cargo build --release --target wasm32-unknown-unknown
-        working-directory: ./rust-wasm-bindgen
-
   rust-formatting:
     name: rust-formatting
     runs-on: ubuntu-latest
@@ -67,3 +56,11 @@ jobs:
           path: puppeteer
       - run: npm install
         working-directory: ./puppeteer
+      - run: npm run start &
+        working-directory: ./web
+      - run: |
+          while ! curl --output /dev/null --silent --head --fail http://localhost:8086; do
+            printf '.'
+            sleep 5
+          done
+      - run: node ./web/test/evaluate.js
