@@ -31,8 +31,12 @@ impl CounterWrapper {
         Self { internal: counter }
     }
 
-    pub fn increment(&mut self, delta: i64) {
-        self.internal.increment(delta);
+    pub fn increment(&mut self, delta: i64) -> Result<(), JsValue> {
+        let increment_result = self.internal.increment(delta);
+        match increment_result {
+            Ok(_) => Ok(()),
+            Err(e) => Err(JsValue::from_str(&format!("{:?}", e))),
+        }
     }
 
     pub fn get_value(&self) -> i64 {
@@ -48,12 +52,4 @@ pub struct GetIncrementResultInput {
 #[derive(Serialize)]
 pub struct GetIncrementResultOutput {
     pub result: String,
-}
-
-#[wasm_bindgen]
-pub fn get_increment_result(input: String) -> JsValue {
-    let result = GetIncrementResultOutput {
-        result: String::from("1"),
-    };
-    serde_wasm_bindgen::to_value(&result).unwrap()
 }

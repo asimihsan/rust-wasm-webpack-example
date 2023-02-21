@@ -14,8 +14,6 @@
  * with this program. If not, see <https://www.gnu.org/licenses/>
  */
 
-import 'instant.page';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './footer.css';

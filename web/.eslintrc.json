@@ -22,7 +22,8 @@
         "max-len": [2, {
             "code": 120
         }],
-	"spaced-comment": "off"
+        "import/no-relative-packages": "off",
+	    "spaced-comment": "off"
     },
     "settings": {
         "import/resolver": {
