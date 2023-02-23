@@ -14,8 +14,9 @@
  * with this program. If not, see <https://www.gnu.org/licenses/>
  */
 
-use rust::Counter;
 use wasm_bindgen::prelude::*;
+
+use rust::Counter;
 
 #[wasm_bindgen]
 pub struct CounterWrapper {
@@ -26,6 +27,7 @@ pub struct CounterWrapper {
 impl CounterWrapper {
     #[wasm_bindgen(constructor)]
     pub fn new(initial_value: i64) -> Self {
+        console_error_panic_hook::set_once();
         let counter = Counter::new(initial_value);
         Self { internal: counter }
     }
